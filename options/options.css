@@ -1,0 +1,26 @@
+body {
+	background-color: #fefefe;
+	margin: 1% 5% 0 5%;
+}
+
+hr {
+	margin-left: -2%;
+	border: solid 1px #933253;
+}
+
+section {
+	margin-bottom: 3%;
+}
+
+span.sub {
+	color: #555555;
+}
+
+ul {
+	padding-left: 1rem;
+	list-style-type: none;
+}
+
+li {
+	margin-left:
+}

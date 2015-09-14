@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<title>GMaps-Tweaks</title>
+		<link rel="stylesheet" href="options.css">
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../node_modules/angular/angular.min.js"></script>
+		<script src="options.js"></script>
+
+	</head>
+	<body ng-app="myApp" ng-csp ng-controller="SignInCtrl as sign">
+
+		<h1>GMaps-Tweaks</h1>
+
+		<hr/>
+
+		<section ng-show="!sign.isSignedIn">
+
+			<h2>Sign in with Your Google Account</h2>
+
+			<a href="javascript:void(0)" ng-click="sign.signIn()">Sign in</a>
+
+		</section>
+
+		<section ng-show="sign.isSignedIn" ng-controller="OptionsCtrl as options">
+
+			<h2>Options</h2>
+
+			The following options are automatically saved.
+
+			<h3>Attach a searched route to an event of Google Calendar</h3>
+
+			<p>
+				This function allows you attach the searched route on a detail of your event in calendar,<br>
+				when you search a routes on Google Maps.
+			</p>
+
+			Select a calendars which shown event:
+			<ul class="calendars" ng-controller="CalendarsCtrl as cals">
+				<li ng-show="cals.calendars.length == 0">Now loading...</li>
+				<li ng-repeat="item in cals.calendars">
+					<label>
+						<input type="checkbox" ng-model="item.checked" ng-change="cals.onChangedSelected()">
+						{{item.summary}}&nbsp;&nbsp;<span class="sub">({{item.id}})</span>
+					</label>
+				</li>
+			</ul>
+
+			<h3>Debug mode</h3>
+			<p>Pring a logs in the console of browser</p>
+			<label>
+				Enable debug mode:
+				<input type="checkbox" id="isDebugMode" ng-model="options.isDebugMode" ng-change="options.onChangedOptions()">
+			</label>
+
+		</section>
+
+		<hr>
+
+		&copy; <a href="https://github.com/odentools/" target="_blank">OdenTools Project</a>.
+
+	</body>
+</html>

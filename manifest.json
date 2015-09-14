@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	"name": "GMaps-Tweaks",
+	"version": "1.0.0",
+	"description": "An Chrome extension which bring fairy for Google Maps",
+	"homepage_url": "https://github.com/odentools/chrome-ext-gmaps-tweaks",
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.google.com/maps/*",
+				"https://www.google.co.jp/maps/*",
+				"http://www.google.com/calendar/feeds/*",
+				"https://www.google.com/accounts/OAuthGetRequestToken",
+				"https://www.google.com/accounts/OAuthAuthorizeToken",
+				"https://www.google.com/accounts/OAuthGetAccessToken"
+			],
+			"js": [
+				"node_modules/jquery/dist/jquery.min.js",
+				"content.js"
+			]
+		}
+	],
+	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+	"options_page": "options/options.html",
+	"permissions": [
+		"identity"
+	],
+	"web_accessible_resources": [
+		"img/progress.gif"
+	],
+	"oauth2": {
+		"client_id": "82677017484-i5lbucla6gvqmlu4jvfp6qkr3tc4opad.apps.googleusercontent.com",
+		"scopes": [
+			"https://www.googleapis.com/auth/calendar"
+		]
+	}
+}
