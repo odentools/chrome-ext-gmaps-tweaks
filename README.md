@@ -13,7 +13,7 @@ Coming soon...
 
 ## Install from Package File (.crx)
 
-1. Download the package file (.crx) from releases page: https://github.com/odentools/odenwlan-node/releases/latest
+1. Download the package file (.crx) from releases page: https://github.com/odentools/chrome-ext-gmaps-tweaks/releases/latest
 1. Open the extension page **chrome://extensions/** in your chrome/chromium browser.
 1. Drag & drop the downloaded file (e.g. chrome-ext-gmaps-tweaks-vX.Y.Z.crx) to the extensions page.
 1. The GMaps-Tweaks section will be shown on the extensions page.
