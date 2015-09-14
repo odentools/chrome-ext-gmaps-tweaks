@@ -518,6 +518,8 @@
 	// Print a warning string
 	Handler.prototype.logW = function(str) {
 
+		if (!this.isDebug) return;
+
 		if (arguments.length == 1) { // It is variable-length arguments which injected by processor
 			console.warn(arguments[0]);
 		} else {
@@ -538,7 +540,11 @@
 		var handler = new Handler(options.isDebugMode);
 		window.setInterval(function() {
 
-			handler.attachBtnToDirectionCard();
+			try {
+				handler.attachBtnToDirectionCard();
+			} catch (e) {
+				console.error(e);
+			}
 
 		}, 1000);
 
